@@ -1,0 +1,20 @@
+{
+    "name": "pixoten/pixoten-addons",
+    "description": "Pixoten Addons Plugin Development",
+    "type": "wordpress-plugin",
+    "license": "GPLv2",
+    "autoload": {
+        "psr-4": {
+            "Pixoten\\Addons\\": "includes/"
+        },
+        "files": []
+    },
+    "authors": [
+        {
+            "name": "Pixoten",
+            "email": "pixotenbd@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}

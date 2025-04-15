@@ -7,7 +7,7 @@
         "psr-4": {
             "Pixoten\\Addons\\": "includes/"
         },
-        "files": []
+        "files": [ "includes/functions.php" ]
     },
     "authors": [
         {

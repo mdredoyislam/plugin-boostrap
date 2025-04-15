@@ -76,13 +76,8 @@ final class Pixoten_Addons{
      * @return void
      */
     public function activate() {
-        $installed = get_option( 'pixoten_addons_installed' );
-
-        if ( ! $installed ) {
-            update_option( 'pixoten_addons_installed', time() );
-        }
-
-        update_option( 'pixoten_addons_version', PIXOTEN_ADDONS_VERSION );
+        $installer = new Pixoten\Addons\Installer();
+        $installer->run();
     }
 
      /**
@@ -91,6 +86,12 @@ final class Pixoten_Addons{
      * @return void
      */
     public function init_plugin() {
+
+        new Pixoten\Addons\Assets();
+
+        if ( defined( 'DOING_AJAX' ) && DOING_AJAX ) {
+            new Pixoten\Addons\Ajax();
+        }
 
         if ( is_admin() ) {
             new Pixoten\Addons\Admin();
